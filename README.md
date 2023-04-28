@@ -5,7 +5,7 @@ This repository provides a practical demonstration of using Great Expectations i
 The pipeline loads data from files into a database and then transforms it. Airflow is used to orchestrate the pipeline, and dbt is used to transform for the "T" step of ELT. Specifically, this tutorial directory contains:
 - [airflow_code](https://github.com/syntio/POC-Great-Expectations/tree/master/airflow_code) - A folder containing the Airflow DAG file for this data pipeline.
 - [data](https://github.com/syntio/POC-Great-Expectations/tree/master/data) - A folder containing two datasets used in the tutorial.
-- [dbt project](https://github.com/syntio/POC-Great-Expectations/tree/master/dbt) - A folder with the dbt project structure.
+- [dbt](https://github.com/syntio/POC-Great-Expectations/tree/master/dbt) - A folder with the dbt project structure.
 - [great_expectations](https://github.com/syntio/POC-Great-Expectations/tree/master/great_expectations) - A folder containing the Great Expectations configuration files.
 
 To use this repository, update the following variables in the [gx_dag_tutorial.py](airflow_code/gx_dag_tutorial.py) file:
