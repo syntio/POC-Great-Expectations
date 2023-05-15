@@ -10,7 +10,7 @@ from airflow.operators.python import PythonOperator
 from great_expectations_provider.operators.great_expectations import GreatExpectationsOperator
 
 
-GX_TUTORIAL_DB_URL = 'postgresql://<your_user>:<your_password>@localhost:5432/tutorials_db'
+GX_TUTORIAL_DB_URL = 'postgresql://<your_user>:<your_password>@localhost:5432/npi_db'
 GX_TUTORIAL_ROOT_PATH = '<your_project_path>'
 GX_CONTEXT_PATH = os.path.join(GX_TUTORIAL_ROOT_PATH, 'great_expectations')
 
@@ -70,7 +70,7 @@ def publish_to_prod():
 
 
 with DAG(
-        dag_id='gx_tutorials_dag',
+        dag_id='pipeline_with_gx',
         default_args={
             'owner': 'Airflow',
             'start_date': pendulum.today('UTC').add(days=-1)
