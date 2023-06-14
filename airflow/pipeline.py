@@ -10,7 +10,7 @@ from airflow.operators.python import PythonOperator
 from great_expectations_provider.operators.great_expectations import GreatExpectationsOperator
 
 
-DATABASE_URL = 'postgresql://<your_user>:<your_password>@localhost:5432/npi_db'
+DATABASE_URL = 'postgresql://<your_user>:<your_password>@localhost:5432/tutorials_db'
 PROJECT_ROOT_PATH = '<your_project_path>'
 GX_CONTEXT_PATH = os.path.join(PROJECT_ROOT_PATH, 'great_expectations')
 
@@ -54,7 +54,7 @@ def transform_data_in_db():
         Run a dbt command to transform data in the database.
     """
     command_activate = r'.\venv\Scripts\activate'
-    command_dbt = f'''dbt run --project-dir {os.path.join(PROJECT_ROOT_PATH, 'dbt')}'''
+    command_dbt = f'''dbt run --project-dir "{os.path.join(PROJECT_ROOT_PATH, 'dbt')}"'''
     subprocess.run(f'{command_activate} && {command_dbt}', shell=True, check=True)
 
 
